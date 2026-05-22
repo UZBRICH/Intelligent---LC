@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>Biz haqimizda<br></h1>
+            <p class="mb-0">Bizning o'quv markazimiz har bir talabaning maqsadlariga erishishi hamda zamonaviy kasb va ilmlarni yuqori darajada o'rganishi uchun xizmat qiladi. Malakali ustozlar va eng yangi o'quv dasturlari bilan kelajagingizni bugundan boshlab quring.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><section id="about-us" class="section about-us">
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+          <img src="{% static 'assets/img/about/about-1.webp' %}" class="img-fluid" alt="">
+        </div>
+
+        <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+          <h3>Biz haqimizda qisqacha ma'lumot va asosiy maqsadlarimiz</h3>
+          <p class="fst-italic">
+            O'quv markazimiz har bir talabaga individual yondashuv hamda zamonaviy metodika asosida sifatli bilim berishni maqsad qilgan.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span>Tafsilotli amaliy mashg'ulotlar va doimiy qo'llab-quvvatlash tizimi.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>O'z sohasining mutaxassislari tomonidan o'tiladigan qiziqarli darslar.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Siz nafaqat nazariy bilimlar, balki kelajakda ish faoliyatingiz uchun zarur bo'lgan eng muhim amaliy ko'nikmalarni ham chuqur o'rganasiz.</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><section id="counts" class="section counts light-background">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Talabalar</p>
+          </div>
+        </div><div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Kurslar</p>
+          </div>
+        </div><div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Tadbirlar</p>
+          </div>
+        </div><div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+            <p>O'qituvchilar</p>
+          </div>
+        </div></div>
+
+    </div>
+
+  </section><section id="testimonials" class="testimonials section">
+
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Fikrlar</h2>
+      <p>Biz haqimizda nima deyishmoqda</p>
+    </div><div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 40
+              },
+              "1200": {
+                "slidesPerView": 2,
+                "spaceBetween": 20
+              }
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/person/person-m-9.webp' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Bosh direktor &amp; Asoschi</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ushbu o'quv markazining o'qitish tizimi va talabalarga ko'rsatadigan e'tibori meni hayratda qoldirdi. Bu yerda ta'lim sifati haqiqatdan ham yuqori darajada tashkil etilgan.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/person/person-f-5.webp' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Dizayner</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Darslar judayam qiziqarli va tushunarli o'tiladi. Ayniqsa, amaliy mashg'ulotlar tufayli qisqa vaqt ichida o'z soham bo'yicha juda ko'p narsalarni o'rganib oldim.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/person/person-f-12.webp' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Do'kon egasi</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Eritilgan natijalar va do'stona muhit uchun markaz ma'muriyatiga minnatdorchilik bildiraman. O'z farzandlarim uchun eng to'g'ri tanlovni qilganimga amin bo'ldim.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/person/person-m-12.webp' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Frilanser</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Professional mentorlar va darsdan tashqari tashkil etiladigan loyihalar menga frilans bozorida o'z o'rnimni topishimda hamda mijozlar bilan ishlashimda katta yordam berdi.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/person/person-m-13.webp' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Tadbirkor</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Zamonaviy bilimlar va innovatsion yondashuv bu markazning eng katta ustunligidir. Kelajak texnologiyalarini va kasblarini o'rganishni istagan barchaga tavsiya qilaman.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section></main>
+
+{% endblock %}

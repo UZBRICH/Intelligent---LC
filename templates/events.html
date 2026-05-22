@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>Tadbirlar</h1>
+            <p class="mb-0">Bizning o'quv markazimizda tashkil etiladigan eng muhim tadbirlar, mahorat darslari va seminarlar bilan tanishing. O'zingizga qiziqarli bo'lgan uchrashuvlarni o'tkazib yubormang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><section id="events" class="events section">
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <div class="card-img">
+              <img src="{% static 'assets/img/event/event-item-1.webp' %}" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Veb-dizaynga kirish</a></h5>
+              <p class="fst-italic text-center">Yakka-yakshanba, 26-sentyabr, soat 19:00 da</p>
+              <p class="card-text">Ushbu mahorat darsida siz veb-dizaynning asosiy qoidalari, zamonaviy interfeyslarni yaratish tamoyillari va sohadagi eng mashhur vositalar bilan dastlabki tanishuvga ega bo'lasiz.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <div class="card-img">
+              <img src="{% static 'assets/img/event/event-item-2.webp' %}" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Marketing strategiyalari</a></h5>
+              <p class="fst-italic text-center">Yakka-yakshanba, 15-noyabr, soat 19:00 da</p>
+              <p class="card-text">Zamonaviy bozorda mahsulot yoki xizmatlarni muvaffaqiyatli rivojlantirish, maqsadli auditoriyani aniqlash va sotuvlarni oshirishga qaratilgan eng samarali marketing usullari haqida suhbatlashamiz.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section></main>
+
+{% endblock %}

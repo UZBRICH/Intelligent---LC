@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<style>
+  .course-item {
+    width: 100% !important;
+  }
+  .course-item .img-fluid,
+  .course-item > div:first-child {
+    width: 100% !important;
+  }
+</style>
+
+{% block content %}
+<main class="main">
+
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>Kurslar</h1>
+            <p class="mb-0">Bizning barcha mavjud o'quv dasturlarimiz va kurslarimiz bilan tanishing. O'zingizga mos bo'lgan yo'nalishni tanlang va professional darajada o'rganishni boshlang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><section id="courses" class="courses section">
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        {% for course in courses %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
+          <div class="course-item">
+            {% if course.image_url %}
+                <img src="{{ course.image_url }}" class="img-fluid" alt="{{ course.title }}">
+              {% else %}
+              <div style="
+                background-color: #e82d2d;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.4rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              ">{{ course.category }}</div>
+              {% endif %}
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="category">{{ course.category }}</p>
+                <p class="price">{{ course.price  }} UZS</p>
+              </div>
+
+              <h3><a href="{% url 'course-details' course.id %}">{{ course.title }}</a></h3>
+              <p class="description">{{ course.description }}</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="{{ course.trainer_image }}" class="img-fluid" alt="">
+                  <a href="" class="trainer-link">{{ course.trainer_name }}</a>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <i class="bi bi-person user-icon"></i>&nbsp;{{ course.students }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% endfor %}
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+{% endblock %}

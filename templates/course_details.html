@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+
+  <!-- Sahifa sarlavhasi -->
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>{{ course.title }}</h1>
+            <p class="mb-0">{{ course.category }} Kursi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kurs tafsilotlari bo‘limi -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Chap taraf: Rasm -->
+        <div class="col-lg-8">
+          {% if course.image_url %}
+            <img src="{{ course.image_url }}" class="img-fluid rounded w-100" alt="{{ course.title }}">
+          {% else %}
+            <div style="
+              background-color: #e82d2d;
+              height: 350px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-size: 2rem;
+              font-weight: 700;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              border-radius: 8px;
+            ">{{ course.category }}</div>
+          {% endif %}
+
+          {% if course.description %}
+            <div class="mt-4">
+              <h4>Kurs haqida</h4>
+              <p>{{ course.description }}</p>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- O‘ng taraf: Ma’lumot kartasi -->
+        <div class="col-lg-4">
+          <div class="card shadow-sm border-0 p-4">
+
+            <h3 class="mb-3">{{ course.title }}</h3>
+
+            <div class="mb-3">
+              <span class="badge text-white px-3 py-2" style="background-color: #e82d2d; font-size: 0.9rem;">
+                {{ course.category }}
+              </span>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">Narxi</span>
+              <strong>{{ course.price }} UZS / oyiga</strong>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">O‘qituvchi</span>
+              <strong>{{ course.instructor_name }}</strong>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">O‘quvchilar</span>
+              <strong>
+                {% if course.student_count %}
+                  {{ course.student_count }}
+                {% else %}
+                  Tez orada
+                {% endif %}
+              </strong>
+            </div>
+
+            <hr>
+
+            <a href="{% url 'courses_page' %}" class="btn w-100 text-white mt-2" style="background-color: #e82d2d;">
+              ← Kurslarga qaytish
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

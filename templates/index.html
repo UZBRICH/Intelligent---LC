@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+
+  <section id="hero" class="hero section dark-background">
+
+    <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+    <div class="container">
+      <h2 data-aos="fade-up" data-aos-delay="100">Bugun Ta'lim Oling,<br>Ertaga Yetakchi Bo'ling</h2>
+      <p data-aos="fade-up" data-aos-delay="200">Biz iqtidorli o'qituvchilar jamoasimiz</p>
+      <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+        <a href="{% url 'courses_page' %}" class="btn-get-started">Boshlash</a>
+      </div>
+    </div>
+
+  </section><section id="about" class="about section">
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+          <img src="{% static 'assets/img/about.jpg' %}">
+        </div>
+
+        <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+          <h3>Biz haqimizda qisqacha ma'lumot va asosiy maqsadlarimiz</h3>
+          <p class="fst-italic">
+            O'quv markazimiz har bir talabaga individual yondashuv hamda zamonaviy metodika asosida sifatli bilim berishni maqsad qilgan.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span>Tafsilotli amaliy mashg'ulotlar va doimiy qo'llab-quvvatlash tizimi.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>O'z sohasining mutaxassislari tomonidan o'tiladigan qiziqarli darslar.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Siz nafaqat nazariy bilimlar, balki kelajakda ish faoliyatingiz uchun zarur bo'lgan eng muhim amaliy ko'nikmalarni ham chuqur o'rganasiz.</span></li>
+          </ul>
+          <a href="{% url 'about' %}" class="read-more"><span>Batafsil Ma'lumot</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><section id="counts" class="section counts light-background">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Talabalar</p>
+          </div>
+        </div><div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Kurslar</p>
+          </div>
+        </div><div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Tadbirlar</p>
+          </div>
+        </div><div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
+            <p>O'qituvchilar</p>
+          </div>
+        </div></div>
+
+    </div>
+
+  </section><section id="why-us" class="section why-us">
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="why-box">
+            <h3>Nega Aynan Bizni Tanlashadi?</h3>
+            <p>
+              Bizning o'quv markazimiz zamonaviy infratuzilma, tajribali ustozlar va eng yangi o'quv dasturlariga ega. Biz har bir o'quvchining natijasi uchun qayg'uramiz va ularni faqat eng yaxshi natijalarga erishishlari uchun yo'naltiramiz.
+            </p>
+            <div class="text-center">
+              <a href="#" class="more-btn"><span>Batafsil Ma'lumot</span> <i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+        </div><div class="col-lg-8 d-flex align-items-stretch">
+          <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-xl-4">
+              <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-clipboard-data"></i>
+                <h4>Sifatli va qulay ta'lim tizimi</h4>
+                <p>Dars jadvali va o'quv rejalari talabalarning ehtiyojlariga mos ravishda moslashtirilgan</p>
+              </div>
+            </div><div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-gem"></i>
+                <h4>Yuqori tajribali mentorlar</h4>
+                <p>O'z sohasida ko'p yillik tajribaga ega bo'lgan va professional mutaxassislar dars beradi</p>
+              </div>
+            </div><div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-inboxes"></i>
+                <h4>Doimiy amaliyot va loyihalar</h4>
+                <p>O'quvchilar dars davomida real loyihalar ustida ishlab, portfoliolarini boyitib boradilar</p>
+              </div>
+            </div></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><section id="features" class="features section">
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="features-item">
+            <i class="bi bi-eye" style="color: #ffbb2c;"></i>
+            <h3><a href="" class="stretched-link">Keng Dunyoqarash</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="features-item">
+            <i class="bi bi-infinity" style="color: #5578ff;"></i>
+            <h3><a href="" class="stretched-link">Cheksiz Imkoniyatlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="features-item">
+            <i class="bi bi-mortarboard" style="color: #e80368;"></i>
+            <h3><a href="" class="stretched-link">Sifatli Ta'lim</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="features-item">
+            <i class="bi bi-nut" style="color: #e361ff;"></i>
+            <h3><a href="" class="stretched-link">Katta Natijalar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="features-item">
+            <i class="bi bi-shuffle" style="color: #47aeff;"></i>
+            <h3><a href="" class="stretched-link">Moslanuvchan Tizim</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="features-item">
+            <i class="bi bi-star" style="color: #ffa76e;"></i>
+            <h3><a href="" class="stretched-link">Eng Yaxshi Dasturlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+          <div class="features-item">
+            <i class="bi bi-x-diamond" style="color: #11dbcf;"></i>
+            <h3><a href="" class="stretched-link">Zamonaviy Metodlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+          <div class="features-item">
+            <i class="bi bi-camera-video" style="color: #4233ff;"></i>
+            <h3><a href="" class="stretched-link">Onlayn Darslar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
+          <div class="features-item">
+            <i class="bi bi-command" style="color: #b2904f;"></i>
+            <h3><a href="" class="stretched-link">Qulay Sharoitlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
+          <div class="features-item">
+            <i class="bi bi-dribbble" style="color: #b20969;"></i>
+            <h3><a href="" class="stretched-link">Do'stona Muhit</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
+          <div class="features-item">
+            <i class="bi bi-activity" style="color: #ff5828;"></i>
+            <h3><a href="" class="stretched-link">Faol Jamiyat</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
+          <div class="features-item">
+            <i class="bi bi-brightness-high" style="color: #29cc61;"></i>
+            <h3><a href="" class="stretched-link">Yorqin Kelajak</a></h3>
+          </div>
+        </div></div>
+
+    </div>
+
+  </section><section id="courses" class="courses section">
+
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Kurslar</h2>
+      <p>Ommabop Kurslar</p>
+    </div><div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="course-item">
+            <img src="{% static 'assets/img/course/course-1.webp' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="category">Veb Dasturlash</p>
+                <p class="price">$169</p>
+              </div>
+
+              <h3><a href="course-details.html">Veb-sayt Dizayni (Website Design)</a></h3>
+              <p class="description">Veb-saytlarni yaratish va ularning vizual ko'rinishini eng zamonaviy standartlar asosida loyihalashni o'rganing.</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="{% static 'assets/img/person/person-m-7.webp' %}" class="img-fluid" alt="">
+                  <a href="" class="trainer-link">Antonio</a>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <i class="bi bi-person user-icon"></i>&nbsp;50
+                  &nbsp;&nbsp;
+                  <i class="bi bi-heart heart-icon"></i>&nbsp;65
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="course-item">
+            <img src="{% static 'assets/img/course/course-2.webp' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="category">Marketing</p>
+                <p class="price">$250</p>
+              </div>
+
+              <h3><a href="course-details.html">Qidiruv Tizimini Optimallashtirish (SEO)</a></h3>
+              <p class="description">Saytlarni qidiruv tizimlarida (Google va h.k.) yuqori o'rinlarga olib chiqish va unga mijozlarni jalb qilish sirlari.</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="{% static 'assets/img/person/person-f-14.webp' %}" class="img-fluid" alt="">
+                  <a href="" class="trainer-link">Lana</a>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <i class="bi bi-person user-icon"></i>&nbsp;35
+                  &nbsp;&nbsp;
+                  <i class="bi bi-heart heart-icon"></i>&nbsp;42
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="course-item">
+            <img src="{% static 'assets/img/course/course-3.webp' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="category">Kontent</p>
+                <p class="price">$180</p>
+              </div>
+
+              <h3><a href=" url 'course-details'">Kopirayting (Copywriting)</a></h3>
+              <p class="description">Sotuvchi matnlar yozish, ijtimoiy tarmoqlar va brendlar uchun ta'sirli va jozibali kontentlar tayyorlash kursi.</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="{% static 'assets/img/person/person-m-12.webp' %}" class="img-fluid" alt="">
+                  <a href="" class="trainer-link">Brandon</a>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <i class="bi bi-person user-icon"></i>&nbsp;20
+                  &nbsp;&nbsp;
+                  <i class="bi bi-heart heart-icon"></i>&nbsp;85
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> </div>
+
+    </div>
+
+  </section><section id="trainers-index" class="section trainers-index">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <img src="{% static 'assets/img/trainers/trainer-1.jpg' %}" class="img-fluid" alt="">
+            <div class="member-content">
+              <h4>Walter White</h4>
+              <span>Veb Dasturlash</span>
+              <p>
+                Ko'p yillik amaliy tajribaga ega mukammal dasturchi, talabalarga eng murakkab texnologiyalarni ham sodda tilda tushuntiradi.
+              </p>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div><div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="member">
+            <img src="{% static 'assets/img/trainers/trainer-2.jpg' %}" class="img-fluid" alt="">
+            <div class="member-content">
+              <h4>Sarah Jhinson</h4>
+              <span>Marketing</span>
+              <p>
+                Raqamli marketing va brending bo'yicha mutaxassis, o'quvchilariga bozorda muvaffaqiyatga erishish sirlarini o'rgatadi.
+              </p>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div><div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="member">
+            <img src="{% static 'assets/img/trainers/trainer-3.jpg' %}" class="img-fluid" alt="">
+            <div class="member-content">
+              <h4>William Anderson</h4>
+              <span>Kontent</span>
+              <p>
+                Matnlar bilan ishlash va kontent-meyking ustasi, talabalarni ijodiy va noodatiy fikrlashga hamda yozishga undaydi.
+              </p>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div></div>
+
+    </div>
+
+  </section></main>
+
+{% endblock %}
