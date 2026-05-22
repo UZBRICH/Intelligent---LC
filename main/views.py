@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from main.models import Course, Trainer
 from django.shortcuts import get_object_or_404
 from .forms import RegistrationForm
-from django.core.mail import send_mail
-from django.conf import settings
+import os, resend
+
 
 
 
@@ -31,9 +31,12 @@ def course_details(request, id):
             registration.course = course
             registration.save()
 
-            send_mail(
-                subject=f"Yangi ro'yxatdan o'tish: {course.title}",
-                message=f"""
+            resend.api_key = os.environ.get('RESEND_API_KEY')
+            resend.Emails.send({
+                "from": "onboarding@resend.dev",
+                "to": os.environ.get('ADMIN_EMAIL'),
+                "subject": f"Yangi ro'yxatdan o'tish: {course.title}",
+                "text": f"""
 Yangi o'quvchi ro'yxatdan o'tdi!
 
 Ismi: {registration.name}
@@ -41,15 +44,11 @@ Telefon: {registration.phone}
 Kurs: {course.title}
 Kategoriya: {course.category}
 Narx: {course.price} UZS
-                """,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.ADMIN_EMAIL],
-                fail_silently=False,
-            )
+                """
+            })
             return redirect('registration_success')
 
     return render(request, 'course_details.html', {'course': course, 'form': form})
-
 
 def registration_success(request):
     return render(request, 'registration_success.html')
