@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-vh&!*@4)1q%wn^ii-fccvsxs%7h!_7n#wjq*20fg@xdjv=2co%'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
-# ✅ CORRECT env var approach
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'learning-center.up.railway.app']
 
 
 # Application definition
