@@ -87,6 +87,19 @@
             </div>
 
             <hr>
+              <h5 class="mb-3">Kursga yozilish</h5>
+              <form method="POST">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                      {{ form.name }}
+                  </div>
+                  <div class="mb-3">
+                      {{ form.phone }}
+                  </div>
+                  <button type="submit" class="btn w-100 text-white" style="background-color: #e82d2d;">
+                      Ro'yxatdan o'tish
+                  </button>
+              </form>
 
             <a href="{% url 'courses_page' %}" class="btn w-100 text-white mt-2" style="background-color: #e82d2d;">
               ← Kurslarga qaytish

@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from main.models import Course, Trainer
 from django.shortcuts import get_object_or_404
+from .forms import RegistrationForm
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 
 def home(request):
@@ -18,7 +22,37 @@ def courses_page(request):
 
 def course_details(request, id):
     course = get_object_or_404(Course, id=id)
-    return render(request, 'course_details.html', {'course': course})
+    form = RegistrationForm()
+
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            registration = form.save(commit=False)
+            registration.course = course
+            registration.save()
+
+            send_mail(
+                subject=f"Yangi ro'yxatdan o'tish: {course.title}",
+                message=f"""
+Yangi o'quvchi ro'yxatdan o'tdi!
+
+Ismi: {registration.name}
+Telefon: {registration.phone}
+Kurs: {course.title}
+Kategoriya: {course.category}
+Narx: {course.price} UZS
+                """,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.ADMIN_EMAIL],
+                fail_silently=False,
+            )
+            return redirect('registration_success')
+
+    return render(request, 'course_details.html', {'course': course, 'form': form})
+
+
+def registration_success(request):
+    return render(request, 'registration_success.html')
 
 def events(request):
     return render(request, 'events.html')
