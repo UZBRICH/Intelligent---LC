@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, Trainer, Registration
+from .models import Course, Trainer, Registration, Testimonial
 
 
 @admin.register(Course)
@@ -20,3 +20,7 @@ class RegistrationAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone', 'course', 'registered_at')
     search_fields = ('name', 'phone', 'course__title')
     list_filter = ('registered_at',)
+
+
+
+admin.site.register(Testimonial)

@@ -52,25 +52,43 @@
 
         <div class="col-lg-3 col-md-6">
           <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="1" class="purecounter"></span>
+              <span style="font-size: 2.5rem; font-weight: 700; color: #e82d2d;">+</span>
+            </div>
             <p>Talabalar</p>
           </div>
-        </div><div class="col-lg-3 col-md-6">
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
           <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Kurslar</p>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <span style="font-size: 2.5rem; font-weight: 700; color: #e82d2d;">+</span>
+            </div>
+            <p>Xil Kurslar</p>
           </div>
-        </div><div class="col-lg-3 col-md-6">
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
           <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <span style="font-size: 2.5rem; font-weight: 700; color: #e82d2d;">+</span>
+            </div>
             <p>Tadbirlar</p>
           </div>
-        </div><div class="col-lg-3 col-md-6">
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
           <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <span style="font-size: 2.5rem; font-weight: 700; color: #e82d2d;">+</span>
+            </div>
             <p>O'qituvchilar</p>
           </div>
-        </div></div>
+        </div>
 
     </div>
 
@@ -279,58 +297,42 @@
 
       <div class="row">
 
-        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-          <div class="member">
-            <img src="{% static 'assets/img/trainers/trainer-1.jpg' %}" class="img-fluid" alt="">
-            <div class="member-content">
-              <h4>Walter White</h4>
-              <span>Veb Dasturlash</span>
-              <p>
-                Ko'p yillik amaliy tajribaga ega mukammal dasturchi, talabalarga eng murakkab texnologiyalarni ham sodda tilda tushuntiradi.
-              </p>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter-x"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div><div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="member">
-            <img src="{% static 'assets/img/trainers/trainer-2.jpg' %}" class="img-fluid" alt="">
-            <div class="member-content">
-              <h4>Sarah Jhinson</h4>
-              <span>Marketing</span>
-              <p>
-                Raqamli marketing va brending bo'yicha mutaxassis, o'quvchilariga bozorda muvaffaqiyatga erishish sirlarini o'rgatadi.
-              </p>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter-x"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div><div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-          <div class="member">
-            <img src="{% static 'assets/img/trainers/trainer-3.jpg' %}" class="img-fluid" alt="">
-            <div class="member-content">
-              <h4>William Anderson</h4>
-              <span>Kontent</span>
-              <p>
-                Matnlar bilan ishlash va kontent-meyking ustasi, talabalarni ijodiy va noodatiy fikrlashga hamda yozishga undaydi.
-              </p>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter-x"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div></div>
+        {% for trainer in trainers %}
+<div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
+  <div class="member">
+    {% if trainer.image %}
+      <img src="{{ trainer.image.url }}" class="img-fluid" alt="{{ trainer.name }}"
+        style="height: 300px; width: 100%; object-fit: cover;">
+    {% else %}
+      <div style="
+        background-color: #e82d2d;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        border-radius: 8px;
+      ">{{ trainer.name|first|upper }}</div>
+    {% endif %}
+    <div class="member-content">
+      <h4>{{ trainer.name }}</h4>
+      <span>{{ trainer.specialty }}</span>
+      <p>{{ trainer.bio }}</p>
+      <div class="social">
+        {% if trainer.facebook %}<a href="{{ trainer.facebook }}"><i class="bi bi-facebook"></i></a>{% endif %}
+        {% if trainer.instagram %}<a href="{{ trainer.instagram }}"><i class="bi bi-instagram"></i></a>{% endif %}
+        {% if trainer.linkedin %}<a href="{{ trainer.linkedin }}"><i class="bi bi-linkedin"></i></a>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% empty %}
+<div class="col-12 text-center">
+  <p>Hozircha o'qituvchilar yo'q.</p>
+</div>
+{% endfor %}
 
     </div>
 

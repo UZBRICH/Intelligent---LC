@@ -33,3 +33,14 @@ class Registration(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.course.title}"
+    
+class Testimonial(models.Model):
+    name = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
+    rating = models.IntegerField(default=5)
+    comment = models.TextField()
+    image = models.ImageField(upload_to='testimonials/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.role}"

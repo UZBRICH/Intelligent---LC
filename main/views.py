@@ -1,14 +1,14 @@
-from django.shortcuts import render, redirect
-from main.models import Course, Trainer
-from django.shortcuts import get_object_or_404
-from .forms import RegistrationForm
-import os, resend
+from main.forms import RegistrationForm, TestimonialForm
+from main.models import Course, Trainer, Testimonial
+from django.shortcuts import render, get_object_or_404, redirect
+import resend, os
 
 
 
 
 def home(request):
-    return render(request, 'index.html')
+    trainers = Trainer.objects.all()[:3]
+    return render(request, 'index.html', {'trainers': trainers})
 
 def about(request):
     return render(request, 'about.html')
@@ -65,3 +65,18 @@ def starter_page(request):
 def trainers(request):
     all_trainers = Trainer.objects.all() 
     return render(request, 'trainers.html', {'trainers': all_trainers})
+
+def about(request):
+    testimonials = Testimonial.objects.all().order_by('-created_at')
+    form = TestimonialForm()
+
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('about')
+
+    return render(request, 'about.html', {
+        'testimonials': testimonials,
+        'form': form
+    })
