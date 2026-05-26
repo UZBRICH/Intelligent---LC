@@ -30,6 +30,10 @@ def send_telegram(message):
         'parse_mode': 'HTML'
     })
 
+def test_telegram(request):
+    send_telegram("✅ Test xabar! Telegram ishlayapti.")
+    return render(request, 'index.html')
+
 def course_details(request, id):
     course = get_object_or_404(Course, id=id)
     form = RegistrationForm()
