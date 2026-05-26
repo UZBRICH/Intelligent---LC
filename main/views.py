@@ -10,9 +10,6 @@ def home(request):
     trainers = Trainer.objects.all()[:3]
     return render(request, 'index.html', {'trainers': trainers})
 
-def about(request):
-    return render(request, 'about.html')
-
 def contact(request):
     return render(request, 'contact.html')
 
