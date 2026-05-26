@@ -62,7 +62,52 @@ def events(request):
     return render(request, 'events.html')
 
 def pricing(request):
-    return render(request, 'pricing.html')
+    beginner_courses = Course.objects.filter(
+        title__icontains='Beginner'
+    ) | Course.objects.filter(
+        title__icontains='Kids'
+    ) | Course.objects.filter(
+        title__icontains='Elementary'
+    )
+
+    intermediate_courses = Course.objects.filter(
+        title__icontains='Intermediate'
+    ) | Course.objects.filter(
+        title__icontains='Upper'
+    ) | Course.objects.filter(
+        title__icontains='Advanced'
+    ) | Course.objects.filter(
+        title__icontains='Conversation'
+    )
+
+    exam_courses = Course.objects.filter(
+        title__icontains='IELTS'
+    ) | Course.objects.filter(
+        title__icontains='CEFR'
+    ) | Course.objects.filter(
+        title__icontains='SAT'
+    ) | Course.objects.filter(
+        title__icontains='Certificate'
+    ) | Course.objects.filter(
+        title__icontains='National'
+    )
+
+    premium_courses = Course.objects.filter(
+        title__icontains='Intensive'
+    ) | Course.objects.filter(
+        title__icontains='Individual'
+    ) | Course.objects.filter(
+        title__icontains='Premium'
+    ) | Course.objects.filter(
+        title__icontains='VIP'
+    )
+
+    return render(request, 'pricing.html', {
+        'beginner_courses': beginner_courses.distinct(),
+        'intermediate_courses': intermediate_courses.distinct(),
+        'exam_courses': exam_courses.distinct(),
+        'premium_courses': premium_courses.distinct(),
+    })
 
 def starter_page(request):
     return render(request, 'starter-page.html')
