@@ -1,7 +1,7 @@
 from main.forms import RegistrationForm, TestimonialForm
 from main.models import Course, Trainer, Testimonial
 from django.shortcuts import render, get_object_or_404, redirect
-import resend, os
+import requests, os
 
 
 
@@ -20,6 +20,16 @@ def courses_page(request):
     all_courses = Course.objects.all() 
     return render(request, 'courses.html', {'courses': all_courses})
 
+def send_telegram(message):
+    token = os.environ.get('TELEGRAM_BOT_TOKEN')
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    url = f'https://api.telegram.org/bot{token}/sendMessage'
+    requests.post(url, data={
+        'chat_id': chat_id,
+        'text': message,
+        'parse_mode': 'HTML'
+    })
+
 def course_details(request, id):
     course = get_object_or_404(Course, id=id)
     form = RegistrationForm()
@@ -31,21 +41,15 @@ def course_details(request, id):
             registration.course = course
             registration.save()
 
-            resend.api_key = os.environ.get('RESEND_API_KEY')
-            resend.Emails.send({
-                "from": "onboarding@resend.dev",
-                "to": os.environ.get('ADMIN_EMAIL'),
-                "subject": f"Yangi ro'yxatdan o'tish: {course.title}",
-                "text": f"""
-Yangi o'quvchi ro'yxatdan o'tdi!
+            send_telegram(f"""
+🎓 <b>Yangi ro'yxatdan o'tish!</b>
 
-Ismi: {registration.name}
-Telefon: {registration.phone}
-Kurs: {course.title}
-Kategoriya: {course.category}
-Narx: {course.price} UZS
-                """
-            })
+👤 <b>Ism:</b> {registration.name}
+📞 <b>Telefon:</b> {registration.phone}
+📚 <b>Kurs:</b> {course.title}
+🏷 <b>Kategoriya:</b> {course.category}
+💰 <b>Narx:</b> {course.price} UZS
+            """)
             return redirect('registration_success')
 
     return render(request, 'course_details.html', {'course': course, 'form': form})
