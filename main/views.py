@@ -2,6 +2,7 @@ from main.forms import RegistrationForm, TestimonialForm
 from main.models import Course, Trainer, Testimonial
 from django.shortcuts import render, get_object_or_404, redirect
 import requests, os
+from django.db.models import Avg
 
 
 
@@ -118,6 +119,9 @@ def trainers(request):
 
 def about(request):
     testimonials = Testimonial.objects.all().order_by('-created_at')
+    average_rating = Testimonial.objects.aggregate(Avg('rating'))['rating__avg']
+    average_rating = round(average_rating, 1) if average_rating else 0
+    total_reviews = Testimonial.objects.count()
     form = TestimonialForm()
 
     if request.method == 'POST':
@@ -128,5 +132,7 @@ def about(request):
 
     return render(request, 'about.html', {
         'testimonials': testimonials,
-        'form': form
+        'form': form,
+        'average_rating': average_rating,
+        'total_reviews': total_reviews,
     })

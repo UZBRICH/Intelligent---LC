@@ -96,6 +96,27 @@
       <h2>Fikrlar</h2>
       <p>Biz haqimizda nima deyishmoqda</p>
     </div>
+
+    <!-- Average Rating Display -->
+    <div class="text-center mb-4" data-aos="fade-up">
+      <div style="display: inline-block; background: white; border-radius: 16px; padding: 24px 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        <div style="font-size: 3.5rem; font-weight: 800; color: #1a1a1a; line-height: 1;">
+          {{ average_rating }}
+        </div>
+        <div style="margin: 8px 0; font-size: 1.6rem; color: #f5a623;">
+          {% for i in "12345" %}
+            {% if forloop.counter <= average_rating %}
+              <i class="bi bi-star-fill"></i>
+            {% else %}
+              <i class="bi bi-star"></i>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div style="color: #888; font-size: 0.9rem;">
+          {{ total_reviews }} ta fikr asosida
+        </div>
+      </div>
+    </div>
     
     <div class="container" data-aos="fade-up" data-aos-delay="100">
     

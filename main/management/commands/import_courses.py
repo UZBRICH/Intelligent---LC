@@ -41,14 +41,14 @@ COURSES = [
     # ── English – General (each level separate) ───────────────────────────────
     {"title": "General English – Beginner", "category": "English", "price": "350000.00", "instructor_name": "TBD", "student_count": 0},
     {"title": "General English – Elementary", "category": "English", "price": "350000.00", "instructor_name": "TBD", "student_count": 0},
-    {"title": "General English – Pre-Intermediate", "category": "English", "price": "350000.00", "instructor_name": "TBD", "student_count": 0},
-    {"title": "General English – Intermediate", "category": "English", "price": "350000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "General English – Pre-Intermediate", "category": "English", "price": "370000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "General English – Intermediate", "category": "English", "price": "370000.00", "instructor_name": "TBD", "student_count": 0},
     {"title": "General English – Upper-Intermediate", "category": "English", "price": "390000.00", "instructor_name": "TBD", "student_count": 0},
     {"title": "General English – Advanced", "category": "English", "price": "390000.00", "instructor_name": "TBD", "student_count": 0},
 
     # ── English – Exam Prep ───────────────────────────────────────────────────
-    {"title": "English – IELTS Preparation", "category": "English", "price": "430000.00", "instructor_name": "TBD", "student_count": 0},
-    {"title": "English – CEFR Preparation", "category": "English", "price": "430000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "English – IELTS Preparation", "category": "English", "price": "450000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "English – CEFR Preparation", "category": "English", "price": "450000.00", "instructor_name": "TBD", "student_count": 0},
 
     # ── English – Intensive ───────────────────────────────────────────────────
     {"title": "English – Intensive", "category": "English", "price": "650000.00", "instructor_name": "TBD", "student_count": 0},
@@ -69,9 +69,9 @@ COURSES = [
     {"title": "Russian – Intensive", "category": "Russian", "price": "650000.00", "instructor_name": "TBD", "student_count": 0},
 
     # ── Russian – Premium & Individual ───────────────────────────────────────
-    {"title": "Russian – Mini-group Intensive (Premium)", "category": "Russian", "price": "790000.00", "instructor_name": "TBD", "student_count": 0},
-    {"title": "Russian – Individual (VIP)", "category": "Russian", "price": "1190000.00", "instructor_name": "TBD", "student_count": 0},
-    {"title": "Russian – Individual 3-day/week (Flexible)", "category": "Russian", "price": "790000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "Russian – Mini-group Intensive (Premium)", "category": "Russian", "price": "890000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "Russian – Individual (VIP)", "category": "Russian", "price": "1390000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "Russian – Individual 3-day/week (Flexible)", "category": "Russian", "price": "890000.00", "instructor_name": "TBD", "student_count": 0},
 
     # ── Uzbek – General (each level separate) ────────────────────────────────
     {"title": "Uzbek – Beginner", "category": "Uzbek", "price": "350000.00", "instructor_name": "TBD", "student_count": 0},
@@ -85,7 +85,7 @@ COURSES = [
 
     # ── Uzbek – Premium & Individual ─────────────────────────────────────────
     {"title": "Uzbek – Mini-group Intensive (Premium)", "category": "Uzbek", "price": "790000.00", "instructor_name": "TBD", "student_count": 0},
-    {"title": "Uzbek – Individual (VIP)", "category": "Uzbek", "price": "1190000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "Uzbek – Individual (VIP)", "category": "Uzbek", "price": "1290000.00", "instructor_name": "TBD", "student_count": 0},
 
     # ── Mathematics – General (each level separate) ───────────────────────────
     {"title": "Mathematics – Beginner", "category": "Mathematics", "price": "350000.00", "instructor_name": "TBD", "student_count": 0},
@@ -99,7 +99,7 @@ COURSES = [
 
     # ── Mathematics – Premium & Individual ───────────────────────────────────
     {"title": "Mathematics – Mini-group Intensive (Premium)", "category": "Mathematics", "price": "790000.00", "instructor_name": "TBD", "student_count": 0},
-    {"title": "Mathematics – Individual (VIP)", "category": "Mathematics", "price": "1190000.00", "instructor_name": "TBD", "student_count": 0},
+    {"title": "Mathematics – Individual (VIP)", "category": "Mathematics", "price": "1290000.00", "instructor_name": "TBD", "student_count": 0},
     {"title": "Mathematics – Individual 3-day/week (Flexible)", "category": "Mathematics", "price": "790000.00", "instructor_name": "TBD", "student_count": 0},
 ]
 
