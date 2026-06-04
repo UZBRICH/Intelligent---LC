@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+
+  <section id="hero" class="hero section dark-background">
+
+    <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+    <div class="container">
+      <h2 data-aos="fade-up" data-aos-delay="100">Bugun Ta'lim Oling,<br>Ertaga Yetakchi Bo'ling</h2>
+      <p data-aos="fade-up" data-aos-delay="200">Biz iqtidorli o'qituvchilar jamoasimiz</p>
+      <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+        <a href="{% url 'courses_page' %}" class="btn-get-started">Boshlash</a>
+      </div>
+    </div>
+
+  </section><section id="about" class="about section">
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <!-- <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+          <img src="{% static 'assets/img/about.jpg' %}">
+        </div> -->
+
+        <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+          <h3>Biz haqimizda qisqacha ma'lumot va asosiy maqsadlarimiz</h3>
+          <p class="fst-italic">
+            O'quv markazimiz har bir talabaga individual yondashuv hamda zamonaviy metodika asosida sifatli bilim berishni maqsad qilgan.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span>Tafsilotli amaliy mashg'ulotlar va doimiy qo'llab-quvvatlash tizimi.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>O'z sohasining mutaxassislari tomonidan o'tiladigan qiziqarli darslar.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Siz nafaqat nazariy bilimlar, balki kelajakda ish faoliyatingiz uchun zarur bo'lgan eng muhim amaliy ko'nikmalarni ham chuqur o'rganasiz.</span></li>
+          </ul>
+          <a href="{% url 'about' %}" class="read-more"><span>Batafsil Ma'lumot</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><section id="counts" class="section counts light-background">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="1" class="purecounter"></span>
+              <span style="font-size: 2.5rem; font-weight: 700; color: #e82d2d;">+</span>
+            </div>
+            <p>Talabalar</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <span style="font-size: 2.5rem; font-weight: 700; color: #e82d2d;">+</span>
+            </div>
+            <p>Turdagi Kurslar</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <span style="font-size: 2.5rem; font-weight: 700; color: #e82d2d;">+</span>
+            </div>
+            <p>O'qituvchilar</p>
+          </div>
+        </div>
+
+    </div>
+
+  </section><section id="why-us" class="section why-us">
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="why-box">
+            <h3>Nega Aynan Bizni Tanlashadi?</h3>
+            <p>
+              Bizning o'quv markazimiz zamonaviy infratuzilma, tajribali ustozlar va eng yangi o'quv dasturlariga ega. Biz har bir o'quvchining natijasi uchun qayg'uramiz va ularni faqat eng yaxshi natijalarga erishishlari uchun yo'naltiramiz.
+            </p>
+            <div class="text-center">
+              <a href="#" class="more-btn"><span>Batafsil Ma'lumot</span> <i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+        </div><div class="col-lg-8 d-flex align-items-stretch">
+          <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-xl-4">
+              <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-clipboard-data"></i>
+                <h4>Sifatli va qulay ta'lim tizimi</h4>
+                <p>Dars jadvali va o'quv rejalari talabalarning ehtiyojlariga mos ravishda moslashtirilgan</p>
+              </div>
+            </div><div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-gem"></i>
+                <h4>Yuqori tajribali mentorlar</h4>
+                <p>O'z sohasida ko'p yillik tajribaga ega bo'lgan va professional mutaxassislar dars beradi</p>
+              </div>
+            </div><div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-inboxes"></i>
+                <h4>Doimiy amaliyot va loyihalar</h4>
+                <p>O'quvchilar dars davomida real loyihalar ustida ishlab, portfoliolarini boyitib boradilar</p>
+              </div>
+            </div></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><section id="features" class="features section">
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="features-item">
+            <i class="bi bi-eye" style="color: #ffbb2c;"></i>
+            <h3><a href="" class="stretched-link">Keng Dunyoqarash</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="features-item">
+            <i class="bi bi-infinity" style="color: #5578ff;"></i>
+            <h3><a href="" class="stretched-link">Cheksiz Imkoniyatlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="features-item">
+            <i class="bi bi-mortarboard" style="color: #e80368;"></i>
+            <h3><a href="" class="stretched-link">Sifatli Ta'lim</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="features-item">
+            <i class="bi bi-nut" style="color: #e361ff;"></i>
+            <h3><a href="" class="stretched-link">Katta Natijalar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="features-item">
+            <i class="bi bi-shuffle" style="color: #47aeff;"></i>
+            <h3><a href="" class="stretched-link">Moslanuvchan Tizim</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="features-item">
+            <i class="bi bi-star" style="color: #ffa76e;"></i>
+            <h3><a href="" class="stretched-link">Eng Yaxshi Dasturlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+          <div class="features-item">
+            <i class="bi bi-x-diamond" style="color: #11dbcf;"></i>
+            <h3><a href="" class="stretched-link">Zamonaviy Metodlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+          <div class="features-item">
+            <i class="bi bi-camera-video" style="color: #4233ff;"></i>
+            <h3><a href="" class="stretched-link">Onlayn Darslar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
+          <div class="features-item">
+            <i class="bi bi-command" style="color: #b2904f;"></i>
+            <h3><a href="" class="stretched-link">Qulay Sharoitlar</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
+          <div class="features-item">
+            <i class="bi bi-dribbble" style="color: #b20969;"></i>
+            <h3><a href="" class="stretched-link">Do'stona Muhit</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
+          <div class="features-item">
+            <i class="bi bi-activity" style="color: #ff5828;"></i>
+            <h3><a href="" class="stretched-link">Faol Jamiyat</a></h3>
+          </div>
+        </div><div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
+          <div class="features-item">
+            <i class="bi bi-brightness-high" style="color: #29cc61;"></i>
+            <h3><a href="" class="stretched-link">Yorqin Kelajak</a></h3>
+          </div>
+        </div></div>
+
+    </div>
+
+  </section><section id="courses" class="courses section">
+
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Natijalar</h2>
+      <p>Bunday natijalarga biz bilan erishing</p>
+    </div>
+  
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="course-item">
+            <img src="{% static 'assets/img/course/course-1.webp' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="category">CEFR</p>
+                <p class="price">B2</p>
+              </div>
+              <h3>Qaxxorova Muslimaxon</h3>
+              <p class="description">
+                Listening: 55 &nbsp;|&nbsp; Reading: 58 <br>
+                Writing: 61 &nbsp;|&nbsp; Speaking: 46 <br>
+                <strong>Overall: 55</strong>
+              </p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="{% static 'assets/img/person/person-m-7.webp' %}" class="img-fluid" alt="">
+                  <a href="" class="trainer-link">Mr. Xurshidbek</a>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <span class="badge text-white" style="background-color: #e82d2d;">CEFR B2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="course-item">
+            <img src="{% static 'assets/img/course/course-2.webp' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="category">CEFR</p>
+                <p class="price">B2</p>
+              </div>
+              <h3>Komilova Mubinaxon</h3>
+              <p class="description">
+                Listening: 53 &nbsp;|&nbsp; Reading: 63 <br>
+                Writing: 51 &nbsp;|&nbsp; Speaking: 50 <br>
+                <strong>Overall: 54</strong>
+              </p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="{% static 'assets/img/person/person-m-7.webp' %}" class="img-fluid" alt="">
+                  <a href="" class="trainer-link">Mr. Xurshidbek</a>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <span class="badge text-white" style="background-color: #e82d2d;">CEFR B2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="course-item">
+            <img src="{% static 'assets/img/course/course-3.webp' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="category">CEFR</p>
+                <p class="price">B2</p>
+              </div>
+              <h3>Qodirjonov Dilshodbek</h3>
+              <p class="description">
+                Listening: 54 &nbsp;|&nbsp; Reading: 63 <br>
+                Writing: 57 &nbsp;|&nbsp; Speaking: 47 <br>
+                <strong>Overall: 55</strong>
+              </p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="{% static 'assets/img/person/person-m-7.webp' %}" class="img-fluid" alt="">
+                  <a href="" class="trainer-link">Mr. Xurshidbek</a>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <span class="badge text-white" style="background-color: #e82d2d;">CEFR B2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </section>
+
+    <div class="container">
+
+      <div class="row">
+
+        {% for trainer in trainers %}
+<div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
+  <div class="member">
+    {% if trainer.image %}
+      <img src="{{ trainer.image.url }}" class="img-fluid" alt="{{ trainer.name }}"
+        style="height: 300px; width: 100%; object-fit: cover;">
+    {% else %}
+      <div style="
+        background-color: #e82d2d;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        border-radius: 8px;
+      ">{{ trainer.name|first|upper }}</div>
+    {% endif %}
+    <div class="member-content">
+      <h4>{{ trainer.name }}</h4>
+      <span>{{ trainer.specialty }}</span>
+      <p>{{ trainer.bio }}</p>
+      <div class="social">
+        {% if trainer.facebook %}<a href="{{ trainer.facebook }}"><i class="bi bi-facebook"></i></a>{% endif %}
+        {% if trainer.instagram %}<a href="{{ trainer.instagram }}"><i class="bi bi-instagram"></i></a>{% endif %}
+        {% if trainer.linkedin %}<a href="{{ trainer.linkedin }}"><i class="bi bi-linkedin"></i></a>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% empty %}
+<div class="col-12 text-center">
+  <p>Hozircha o'qituvchilar yo'q.</p>
+</div>
+{% endfor %}
+
+    </div>
+
+  </section></main>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main">
+
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>Tadbirlar</h1>
+            <p class="mb-0">Bizning o'quv markazimizda tashkil etiladigan eng muhim tadbirlar, mahorat darslari va seminarlar bilan tanishing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manual Events Section -->
+  <section id="events" class="events section">
+    <div class="container" data-aos="fade-up">
+
+      {% if manual_events %}
+      <div class="row g-4 mb-5">
+        {% for event in manual_events %}
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="card w-100 border-0 shadow-sm">
+            {% if event.image %}
+            <div class="card-img">
+              <img src="{{ event.image.url }}" alt="{{ event.title }}">
+            </div>
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title"><a href="#">{{ event.title }}</a></h5>
+              <p class="fst-italic text-center" style="color: #e82d2d;">
+                <i class="bi bi-calendar3"></i>
+                {{ event.date|date:"d-F, Y" }} &nbsp;|&nbsp;
+                <i class="bi bi-clock"></i>
+                {{ event.date|date:"H:i" }}
+              </p>
+              <p class="card-text">{{ event.description }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+  </section>
+
+  <!-- Telegram Channel Section -->
+  <section class="section light-background">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row align-items-center g-4">
+
+        <!-- Left: Info -->
+        <div class="col-lg-5">
+          <div style="background: #e82d2d; border-radius: 16px; padding: 36px; color: white;">
+            <div style="font-size: 3rem; margin-bottom: 16px;">📢</div>
+            <h3 style="font-weight: 800; margin-bottom: 12px;">Telegram kanalimiz</h3>
+            <p style="opacity: 0.9; line-height: 1.7;">
+              Yangi tadbirlar, kurs yangiliklari, o'quvchilar natijalari va foydali materiallar har kuni kanalimizda chiqadi. O'tkazib yubormang!
+            </p>
+            <ul style="list-style: none; padding: 0; margin: 20px 0;">
+              <li style="margin-bottom: 8px;">🎯 IELTS va CEFR bo'yicha maslahatlar</li>
+              <li style="margin-bottom: 8px;">🏆 O'quvchilar muvaffaqiyatlari</li>
+              <li style="margin-bottom: 8px;">📅 Yangi tadbirlar va darslar</li>
+              <li style="margin-bottom: 8px;">📚 Bepul o'quv materiallari</li>
+            </ul>
+            <a href="https://t.me/Intelligent_LC" target="_blank"
+              style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #e82d2d; padding: 12px 24px; border-radius: 30px; font-weight: 700; text-decoration: none; margin-top: 8px;">
+              <i class="bi bi-telegram" style="font-size: 1.2rem;"></i>
+              Kanalga obuna bo'lish
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Telegram Widget -->
+        <div class="col-lg-7">
+          <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <script async src="https://telegram.org/js/telegram-widget.js?23" 
+              data-telegram-post="Intelligent_LC/{{ latest_post_id }}" 
+              data-width="100%" data-dark="1">
+            </script>
+          </div>
+          <p class="text-center mt-3" style="color: #888; font-size: 0.9rem;">
+            Kanalimizning so'nggi postlari
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

@@ -1,0 +1,160 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-03 21:51+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\learning_center\settings.py:23
+msgid "Uzbek"
+msgstr "Uzbek"
+
+#: .\learning_center\settings.py:24
+msgid "English"
+msgstr "English"
+
+#: .\learning_center\settings.py:25
+msgid "Russian"
+msgstr "Russian"
+
+#: .\templates\base.html:24
+msgid "Intelligent - O'quv Markazi"
+msgstr "Intelligent - Learning Center"
+
+#: .\templates\base.html:50
+msgid "Logo"
+msgstr "Logo"
+
+#: .\templates\base.html:52 .\templates\base.html:201
+msgid "Intelligent"
+msgstr "Intelligent"
+
+#: .\templates\base.html:53
+msgid "O'quv Markazi"
+msgstr "Learning Center"
+
+#: .\templates\base.html:61 .\templates\base.html:159
+msgid "Bosh sahifa"
+msgstr "Home"
+
+#: .\templates\base.html:67 .\templates\base.html:160
+msgid "Biz haqimizda"
+msgstr "About Us"
+
+#: .\templates\base.html:73
+msgid "Kurslar"
+msgstr "Courses"
+
+#: .\templates\base.html:79
+msgid "O'qituvchilar"
+msgstr "Teachers"
+
+#: .\templates\base.html:85
+msgid "Tadbirlar"
+msgstr "Events"
+
+#: .\templates\base.html:91
+msgid "Tavsiyalar"
+msgstr "Testimonials"
+
+#: .\templates\base.html:97
+msgid "Aloqa"
+msgstr "Contact"
+
+#: .\templates\base.html:104
+msgid "Boshlash"
+msgstr "Get Started"
+
+#: .\templates\base.html:142
+msgid "INTELLIGENT"
+msgstr "INTELLIGENT"
+
+#: .\templates\base.html:145
+msgid "Andijon Shahar, Yangi bozor hududi"
+msgstr "Andijan City, Yangi Bozor area"
+
+#: .\templates\base.html:146
+msgid "Telefon:"
+msgstr "Phone:"
+
+#: .\templates\base.html:147
+msgid "Elektron pochta:"
+msgstr "Email:"
+
+#: .\templates\base.html:157
+msgid "Foydali Havolalar"
+msgstr "Useful Links"
+
+#: .\templates\base.html:161
+msgid "Xizmatlar"
+msgstr "Services"
+
+#: .\templates\base.html:162
+msgid "Foydalanish shartlari"
+msgstr "Terms of Use"
+
+#: .\templates\base.html:163
+msgid "Maxfiylik siyosati"
+msgstr "Privacy Policy"
+
+#: .\templates\base.html:168
+msgid "Bizning Xizmatlar"
+msgstr "Our Services"
+
+#: .\templates\base.html:170
+msgid "Veb Dizayn"
+msgstr "Web Design"
+
+#: .\templates\base.html:171
+msgid "Veb Dasturlash"
+msgstr "Web Development"
+
+#: .\templates\base.html:172
+msgid "Mahsulot Boshqaruvi"
+msgstr "Product Management"
+
+#: .\templates\base.html:173
+msgid "Marketing"
+msgstr "Marketing"
+
+#: .\templates\base.html:174
+msgid "Grafik Dizayn"
+msgstr "Graphic Design"
+
+#: .\templates\base.html:179
+msgid "Bizga murojaat qilishingiz mumkin"
+msgstr "You can contact us"
+
+#: .\templates\base.html:180
+msgid ""
+"Savollaringiz bormi? Menejerimiz bilan to'g'ridan-to'g'ri bog'laning — tez "
+"va qulay!"
+msgstr ""
+"Have questions? Contact our manager directly — fast and convenient!"
+
+#: .\templates\base.html:186
+msgid "Telegram orqali yozish"
+msgstr "Write via Telegram"
+
+#: .\templates\base.html:201
+msgid "Mualliflik huquqi"
+msgstr "Copyright"
+
+#: .\templates\base.html:201
+msgid "Barcha huquqlar himoyalangan"
+msgstr "All rights reserved"
+
+#: .\templates\base.html:203
+msgid "Dasturchi:"
+msgstr "Developer:"
+
+#: .\templates\base.html:203
+msgid "Developer"
+msgstr "Developer"

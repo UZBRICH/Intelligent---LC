@@ -1,0 +1,233 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+
+  <style>
+    .form-control::placeholder {
+      color: #555 !important;
+      font-weight: 600;
+      opacity: 1;
+    }
+
+    .sitename {
+      font-family: 'Playfair Display', serif !important;
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{% block title %}{% trans "Intelligent - O'quv Markazi" %}{% endblock %}</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'assets/img/logo.webp' %}" alt="{% trans 'Logo' %}">
+        <h1 class="sitename">
+          {% trans "Intelligent" %} <br>
+          {% trans "O'quv Markazi" %}
+        </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li>
+            <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+              {% trans "Bosh sahifa" %}
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">
+              {% trans "Biz haqimizda" %}
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'courses_page' %}" class="{% if request.path == '/courses/' %}active{% endif %}">
+              {% trans "Kurslar" %}
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'trainers' %}" class="{% if request.path == '/trainers/' %}active{% endif %}">
+              {% trans "O'qituvchilar" %}
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'events' %}" class="{% if request.path == '/events/' %}active{% endif %}">
+              {% trans "Tadbirlar" %}
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'pricing' %}" class="{% if request.path == '/pricing/' %}active{% endif %}">
+              {% trans "Tavsiyalar" %}
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">
+              {% trans "Aloqa" %}
+            </a>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="{% url 'courses_page' %}">{% trans "Boshlash" %}</a>
+
+         <!-- Language Switcher -->
+<form action="{% url 'set_language' %}" method="post" id="langForm">
+  {% csrf_token %}
+  <input name="next" type="hidden" value="{{ request.path }}">
+  
+  <div class="dropdown ms-3">
+    <button class="btn btn-sm btn-danger dropdown-toggle" type="button" 
+      data-bs-toggle="dropdown" aria-expanded="false"
+      style="font-size: 0.75rem; padding: 3px 14px; border-radius: 20px;">
+      {% if LANGUAGE_CODE == 'uz' %}UZ
+      {% elif LANGUAGE_CODE == 'en' %}EN
+      {% elif LANGUAGE_CODE == 'ru' %}RU
+      {% else %}UZ
+      {% endif %}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" style="min-width: 120px;">
+      <li>
+        <button type="submit" name="language" value="uz" class="dropdown-item {% if LANGUAGE_CODE == 'uz' %}active{% endif %}">
+          O'zbekcha
+        </button>
+      </li>
+      <li>
+        <button type="submit" name="language" value="en" class="dropdown-item {% if LANGUAGE_CODE == 'en' %}active{% endif %}">
+          English
+        </button>
+      </li>
+      <li>
+        <button type="submit" name="language" value="ru" class="dropdown-item {% if LANGUAGE_CODE == 'ru' %}active{% endif %}">
+          Русский
+        </button>
+      </li>
+    </ul>
+  </div>
+</form>
+
+    </div>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+            <span class="sitename">{% trans "INTELLIGENT" %}</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>{% trans "Andijon Shahar, Yangi bozor hududi" %}</p>
+            <p class="mt-3"><strong>{% trans "Telefon:" %}</strong> <span>+998 93 785 77 77</span></p>
+            <p><strong>{% trans "Elektron pochta:" %}</strong> <span>richuzb13@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://share.google/1t3iQN8CR0V6XvC77"><i class="bi bi-google"></i></a>
+            <a href="https://www.facebook.com/Intelligentlc/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/intelligent_lc/"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>{% trans "Foydali Havolalar" %}</h4>
+          <ul>
+            <li><a href="#">{% trans "Bosh sahifa" %}</a></li>
+            <li><a href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a></li>
+            <li><a href="{% url 'pricing' %}">{% trans "Xizmatlar" %}</a></li>
+            <li><a href="#">{% trans "Foydalanish shartlari" %}</a></li>
+            <li><a href="#">{% trans "Maxfiylik siyosati" %}</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>{% trans "Bizning Xizmatlar" %}</h4>
+          <ul>
+            <li><a href="#">{% trans "Veb Dizayn" %}</a></li>
+            <li><a href="#">{% trans "Veb Dasturlash" %}</a></li>
+            <li><a href="#">{% trans "Mahsulot Boshqaruvi" %}</a></li>
+            <li><a href="#">{% trans "Marketing" %}</a></li>
+            <li><a href="#">{% trans "Grafik Dizayn" %}</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>{% trans "Bizga murojaat qilishingiz mumkin" %}</h4>
+          <p>{% trans "Savollaringiz bormi? Menejerimiz bilan to'g'ridan-to'g'ri bog'laning — tez va qulay!" %}</p>
+
+          <a href="https://t.me/plxel2server" target="_blank"
+            style="display: flex; align-items: center; gap: 12px; background: #229ED9; color: white; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; margin-bottom: 12px; transition: opacity 0.2s;"
+            onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            <i class="bi bi-telegram" style="font-size: 1.4rem;"></i>
+            <span>{% trans "Telegram orqali yozish" %}</span>
+          </a>
+
+          <a href="tel:+998937857777"
+            style="display: flex; align-items: center; gap: 12px; background: #e82d2d; color: white; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: opacity 0.2s;"
+            onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            <i class="bi bi-telephone-fill" style="font-size: 1.4rem;"></i>
+            <span>+998 93 785 77 77</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>{% trans "Mualliflik huquqi" %}</span> <strong class="px-1 sitename">{% trans "Intelligent" %}</strong> <span>{% trans "Barcha huquqlar himoyalangan" %}</span></p>
+      <div class="credits">
+        {% trans "Dasturchi:" %} <a href="https://www.instagram.com/plxel2server/">{% trans "Developer" %}</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
