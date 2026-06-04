@@ -9,7 +9,6 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-# Change these to whatever you want your live admin login to be
 USERNAME = 'admin'
 EMAIL = 'richuzb13@gmail.com'
 PASSWORD = os.environ.get('ADMIN_PASSWORD')
