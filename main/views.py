@@ -58,7 +58,7 @@ def get_telegram_posts():
         return []
     
 def get_latest_telegram_post():
-    token = os.environ.get('8757295120:AAFtTQDSQrdSnaLn9nc0Oo1_v1Uo7bFXGZU')
+    token = os.environ.get('TELEGRAM_BOT_TOKEN')
     try:
         response = requests.get(
             f'https://api.telegram.org/bot{token}/getUpdates',
