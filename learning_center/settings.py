@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(BASE_DIR / '.env')
 
-SECRET_KEY = os.environ.get('django-insecure-vh&!*@4)1q%wn^ii-fccvsxs%7h!_7n#wjq*20fg@xdjv=2co%')
-TELEGRAM_BOT_TOKEN = os.environ.get('8757295120:AAFtTQDSQrdSnaLn9nc0Oo1_v1Uo7bFXGZU')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 
 LANGUAGE_CODE = 'uz'
 
